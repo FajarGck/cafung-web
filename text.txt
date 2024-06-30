@@ -1,0 +1,29 @@
+{
+  "status": "success",
+  "data": {
+    "products": [
+      {
+        "id": 1,
+        "name": "Coffee",
+        "description": "Hot brewed coffee",
+        "price": 2.5,
+        "category_id": 1,
+        "store_id": 1,
+        "image_path": "uploads/coffee.jpg"
+      },
+      ...
+    ]
+  }
+}
+
+{
+  "status": "error",
+  "message": "Invalid request data",
+  "errors": [
+    {
+      "field": "name",
+      "message": "Name is required"
+    },
+    ...
+  ]
+}

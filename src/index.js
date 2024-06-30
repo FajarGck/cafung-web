@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const PORT = process.env.PORT || 8000;
 const app = express();
 const categoriesRoute = require('./routes/categories')
@@ -9,8 +10,8 @@ const logsRequestMiddleware = require('./middleware/logs');
 const upload = require('./middleware/multer');
 
 
-
 app.use(express.json());
+app.use(cors());
 app.use(logsRequestMiddleware);
 app.get('/', (req, res) => {res.send("ok!")})
 app.use('/categories', categoriesRoute);

@@ -67,26 +67,39 @@ const getStoresWithProducts = async (req, res) => {
     }
 };
 
-
-const addStores = async (req, res) => {
-    const { id, name, owner, imgPath } = req.body;
-    try {
-        const results = await storesModel.addStores(id, name, owner, imgPath);
-        res.status(200).json({
-            status: 'ok!',
-            data: {
-                isSuccess: results.affectedRows,
-                insertId: results.insertId
+const addStores = async ({ id, name, owner, imgPath }) => {
+    const sql = 'INSERT INTO stores (id, name, owner, image_path) VALUES(?, ?, ?, ?)';
+    const values = [id, name, owner, imgPath];
+    return new Promise((resolve, reject) => {
+        db.query(sql, values, (err, results) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(results);
             }
         });
-    } catch (err) {
-        console.error(err);
-        res.status(400).json({
-            status: 'Bad Request',
-            error: err.sqlMessage
-        });
-    }
+    });
 };
+
+// const addStores = async (req, res) => {
+//     const { id, name, owner, imgPath } = req.body;
+//     try {
+//         const results = await storesModel.addStores(id, name, owner, imgPath);
+//         res.status(200).json({
+//             status: 'ok!',
+//             data: {
+//                 isSuccess: results.affectedRows,
+//                 insertId: results.insertId
+//             }
+//         });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(400).json({
+//             status: 'Bad Request',
+//             error: err.sqlMessage
+//         });
+//     }
+// };
 
 const updateStores = async (req, res) => {
     const { id } = req.params;

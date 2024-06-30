@@ -5,7 +5,13 @@
 
 - Nyalakan xampp
 
+- Buat Database dan import database
+
+- Buat file .env dan isi data database sesuai format yang ada pada file .env.example
+
 - Setelah Download projek ketik di console 'npm install'
+
+- Untuk running server run 'npm run dev' pada konsol
 
 - Buka project sesuai endpoint dan port localhost
 

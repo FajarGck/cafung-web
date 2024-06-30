@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stores</title>
+</head>
+<body>
+    <div id="store-container"></div>
+
+    <script>
+        async function fetchStores() {
+            try {
+                const response = await fetch('http://localhost:8080/stores');
+                const data = await response.json();
+
+                if (data.status === 'ok!') {
+                    const storeContainer = document.getElementById('store-container');
+                    data.data.stores.forEach(store => {
+                        const storeDiv = document.createElement('div');
+                        storeDiv.innerHTML = `
+                            <h2>${store.name}</h2>
+                            <p>Owner: ${store.owner}</p>
+                            <img src="http://localhost:8080/${store.image_path}" alt="${store.name}" width="200">
+                        `;
+                        storeContainer.appendChild(storeDiv);
+                    });
+                } else {
+                    console.error('Failed to fetch stores:', data.error);
+                }
+            } catch (error) {
+                console.error('Error fetching stores:', error);
+            }
+        }
+
+        fetchStores();
+    </script>
+</body>
+</html>

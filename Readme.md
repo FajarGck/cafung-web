@@ -15,6 +15,8 @@
 
 - Buka project sesuai endpoint dan port localhost
 
+- Buka Live server frontEnd untuk test consume API
+
 **Beberapa Endpoint**
 
 - /categories : list category

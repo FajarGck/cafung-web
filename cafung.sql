@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2024 at 11:52 AM
+-- Generation Time: Jul 02, 2024 at 04:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -62,8 +62,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `category_id`, `store_id`, `image_path`) VALUES
-(2, 'Teh Jumbo', 'Teh Jummbo Murah\r\n', 5000, 3, 2, 'f.png'),
-(3, 'Nasi Goreng', 'Toping Sewiran ayam jago', 10000, 2, 1, 'f.jpg');
+(2, 'Teh Jumbo', 'Teh Jumbo Mantap', 5000, 3, 2, 'public\\images\\image-1719846990171.jpg'),
+(3, 'Nasi Goreng', 'Toping Sewiran ayam jago', 10000, 2, 1, 'f.jpg'),
+(11, 'Teh Hijau', 'Teh Hijau Mantap', 10000, 3, 2, 'public\\images\\image-1719849501739.jpg'),
+(12, 'Teh Hitam', 'Teh Hitam Mantap', 11000, 3, 2, 'public\\images\\image-1719849569346.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,9 +85,10 @@ CREATE TABLE `stores` (
 --
 
 INSERT INTO `stores` (`id`, `name`, `owner`, `image_path`) VALUES
-(1, 'Warmindo', 'Surti', 'p.png'),
-(2, 'Teh Desa', 'Nono', 'p.png'),
-(3, 'Kopi Kenangan', 'John', 'p.png');
+(1, 'Kopi Kenangan', 'Septi', 'public\\images\\image-1719846110223.jpg'),
+(2, 'Ampu Mart', 'Jarwo', 'public\\images\\image-1719846083808.jpg'),
+(3, 'Warung123', 'Parno', 'public\\images\\image-1719846054508.jpg'),
+(4, 'NasgorGua', 'sony', 'public\\images\\image-1719845981064.jpg');
 
 --
 -- Indexes for dumped tables
@@ -126,7 +129,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `stores`

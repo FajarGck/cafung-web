@@ -23,7 +23,9 @@ const getAllProducts = async (req, res) => {
 
         res.status(200).json({
             status: 'ok!',
-            data: products
+            data: {
+                products: products
+            }
         })
     } catch (err) {
         console.error(err);
@@ -37,7 +39,8 @@ const getAllProducts = async (req, res) => {
 
 
 const addProduct = async (req, res) => {
-    const { name, description, price, imgPath, storeId, categoryId } = req.body;
+    const { name, description, price, storeId, categoryId } = req.body;
+    const imgPath = req.file ? req.file.path : null;
     try {
         const results = await productsModel.addProduct(name, description, price, imgPath, storeId, categoryId);
         res.status(201).json({
@@ -60,7 +63,8 @@ const addProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
     const { id } = req.params;
-    const { name, description, price, imgPath, storeId, categoryId } = req.body;
+    const { name, description, price, storeId, categoryId } = req.body;
+    const imgPath = req.file ? req.file.path : null;
     try {
         const results = await productsModel.updateProduct(id, name, description, price, imgPath, storeId, categoryId);
         if (results.affectedRows === 0) {

@@ -1,0 +1,220 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all ease-in-out 0.3s
+}
+
+
+/* color : ungu tua #700070 */
+/* unngu muda #4A1B9D */
+/* kuning #FF7900 */
+.navbar {
+    background-color: #700070;
+}
+
+#nav-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo-brand {
+    width: 50px;
+    height: 50px;
+}
+
+
+.collapse {
+    width: fit-content;
+}
+
+.navbar-nav {
+    padding-top: 4px;
+}
+
+.nav-link {
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+ .nav-link:hover {
+    color: #FF7900;;
+    font-size: 1rem * 1.25;
+  }
+
+
+
+#hero {
+ background: rgb(112,0,112);
+background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%);
+  min-height: 80vh;
+  /* background: url('./assets/banner.jpeg') no-repeat center center; */
+  background-size: auto;
+  background-blend-mode: overlay;
+  margin-top: 60px;
+  animation: slideShow 5s infinite;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes slideShow {
+  0% {
+    background-image: url('./assets/1.jpg');
+  }
+  33% {
+    background-image: url('./assets/2.jpg');
+  }
+  66% {
+    background-image: url('./assets/3.jpg');
+  }
+  100% {
+    background-image: url('./assets/1.jpg');
+  }
+}
+
+#kopi {
+    color: #700070;
+}
+
+
+.btn-hero {
+    background-color: #700070;
+}
+.btn-hero:hover {
+    background-color: #5a005a;
+}
+
+.about-text-box {
+    height: fit-content;
+     background: rgb(112,0,112);
+background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%);
+    -webkit-box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+    -moz-box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+    box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+}
+
+.about-title {
+    color: white;
+}
+
+.btn-beli {
+  background-color: #700070;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-beli:hover {
+  background-color: #4A1B9D;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#hero-box {
+  max-width: 38rem;
+}
+
+#btn-menu {
+    background-color: #7F00FF;
+    color: white;
+}
+
+.btn-stores {
+    background-color: #4A1B9D;
+}
+
+.btn-stores:hover {
+    background-color: #5a005a;
+}
+
+.small {
+    max-width: 25rem;
+    color: white;
+}
+
+.card-img-top{
+    border-radius: 50px;
+    padding: 20px;
+}
+.card{
+    min-height: 28rem;
+    max-height: 28rem;
+    background: rgb(112,0,112);
+    background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%);
+    transition: all, ease-in-out, 1s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    -webkit-box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+    -moz-box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+    box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+}
+.card-body{
+    padding: 25px;
+    margin-top: -15px;
+}
+
+.btn-beli{
+    border-radius: 50px;
+    width: 120px;
+}
+
+.card-title,.price-menu{
+    color: white;
+}
+
+.card-text {
+    color: white;
+}
+
+.btn-beli {
+    background-color: #4A1B9D;
+    border: none;;
+
+}
+
+.btn-beli:hover{
+    background-color: #5a005a;
+}
+
+#kontak-container {
+    flex-direction: column;
+}
+
+#list-kontak {
+    flex-direction: row;
+}
+
+@media (min-width: 768px) {
+  
+}
+
+@media (min-width: 992px) {
+  /* Your styles for normal desktops */
+  #logo-brand {
+    width: 60px;
+    height: 60px;
+  }
+
+  .navbar li {
+        margin-left : 1em;
+        margin-right : 1em;
+    }
+  .nav-link {
+    border: 0px;
+    font-size: 1.5rem;
+  }
+
+  #hero {
+    min-height: 88vh;
+    margin-top: 100px;
+  }
+
+  #kontak-container {
+    flex-direction: row;
+}
+
+  #list-kontak {
+    flex-direction: column;
+  }
+
+}

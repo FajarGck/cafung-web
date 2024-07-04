@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFUNG</title>
+    <link rel="icon" type="image" href="./assets/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div id="nav-container" class="container d-flex mx-auto">
+         <a class="navbar-brand" href="#hero">
+            <img src="./assets/logo.png" alt="Logo" id="logo-brand" class="d-inline-block align-text-top">
+          </a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-2">
+            <li class="nav-item">
+              <a class="nav-link fw-bolder" href="#hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bolder" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bolder" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bolder" href="#kontak">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<section id="hero" class="container-lg">
+  <div class="container-lg d-flex align-items-center">
+    <div id="hero-box" class="text-start w-100 p-lg-4 pt-4 align-items-end">
+      <h3 class="display-3 pb-2 fw-bolder text-white">Nikmati hidup dengan secangkir<span id="kopi"> Kopi</span>mu #rasadicafeungu </h3>
+      <p class="lead pb-2 text-light">Canteen - Minimarket - Meeting Room </p>
+      <button class="btn-hero btn btn-lg text-white fw-semibold">
+        <a href="#menu" class="text-white text-decoration-none">Beli Sekarang!</a>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<section id="about" class="pt-5 pb-4">
+    <div class="w-100 text-center mb-4">
+        <span class="fw-bold fs-3 py-4">Tentang Kami</span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 mb-3 order-1">
+                <div class="w-100 h-100 rounded">
+                    <img src="./assets/about1.jpeg" class="w-100 h-auto rounded shadow-lg" alt="about-img-1">
+                </div>
+            </div>
+            <div class="about-text-box rounded col-sm-6 mb-3 pr-5 pl-5 order-2">
+                <div class="h-100 p-2">
+                    <h1 class="about-title fw-bold">Caffe Baru loh Ini!</h1>
+                    <p class="small fw-base">Cafung merupakan campus caffe milik Universitas Amikom Purwokerto yang baru saja didirikan pada tahun 2023 dan bertempat tepat disebelah kampus Amikom Purwokerto🤩</p>
+                </div>
+            </div>
+            <div class="about-text-box rounded col-sm-6 mb-3 order-4 pl-5  order-sm-3">
+                <div class="h-100 p-2">
+                    <h1 class="about-title fw-bold">Tempat Kami Cozy Banget Loh!</h1>
+                    <p class="small fw-base">Campus Caffe Cafung sangat cocok bagi kamu yang sedang mengerjakan tugas, karena cafe ini memang didesign untuk para mahasiswa, khususnya kamu yang lagi mumet🥰</p>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-3 order-3 order-sm-4">
+                <div class="w-100 h-100 rounded">
+                    <img src="./assets/about 2.jpeg" class="w-100 h-auto rounded shadow-lg" alt="about-img-2">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+       <section id="menu" class="pt-5 pb-5">
+        <div class="w-100 text-center">
+            <span class="fw-bold fs-3">Menu</span>
+        </div>
+        <div class="container py-2">
+            <div class="btn-group py-2 ">
+                <button type="button" id="btn-menu" class="btn dropdown-toggle fw-bold" data-bs-toggle="dropdown" aria-expanded="false">
+                    Daftar Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" id="allMenu" href="#menu">Semua</a></li>
+                    <li><a class="dropdown-item" id="menuMakanan" href="#menu">Makanan</a></li>
+                    <li><a class="dropdown-item" id="menuMinuman" href="#menu">Minuman</a></li>
+                </ul>
+                <button type="button" class="btn-stores rounded mx-3"><a href="#menu" id="btnStores" class="text-decoration-none text-light m-3 fw-bold">
+                    Stores
+                </a></button>
+            </div>
+            <div id="card-container" class="row row-cols-1 row-cols-md-3 g-4 py-2"></div>
+        </div>
+    </section>
+
+<section id="kontak" class="container-lg pb-5 scroll-p-12">
+    <span>
+        <h1 class="text-center fw-bold mb-4 xl:mb-8">Kontak Kami</h1>
+    </span>
+    <div id="kontak-container" class="container d-flex flex-md-row justify-content-center align-items-center w-100 gap-4">
+        <div id="list-kontak" class="d-flex gap-4 p-2 order-2">
+            <div class="d-flex align-items-center gap-1">
+                <a href="" class="h3 fw-bold text-secondary">
+                    <i class="fab fa-whatsapp fa-2x"></i>
+                </a>
+                <h1 class="h4 d-none d-md-inline py-2">08XXXXASXX</h1>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+                <a href="" class="h3 fw-bold text-secondary">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <h1 class="h4 d-none d-md-inline py-2">@cafung.pwt</h1>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+                <a href="" class="h3 fw-bold text-secondary">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <h1 class="h4 d-none d-md-inline py-2">cafung.pwt</h1>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+                <a href="" class="h3 fw-bold text-secondary">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <h1 class="h4 d-none d-md-inline py-2">@cafung.pwt</h1>
+            </div>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15826.332410370089!2d109.2163919165151!3d-7.4005205497635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655f9e9fe9a9ad%3A0x31ff43666a49235b!2sCAFE%20UNGU!5e0!3m2!1sen!2sid!4v1720011320975!5m2!1sen!2sid"
+             height="350" style="border:0;" allowfullscreen="" loading="lazy" class="w-100 border rounded"></iframe>
+    </div>
+</section>
+
+<footer class="bg-dark pt-4 pb-2">
+        <span class="text-light">© 2024 <a href="#" class="text-decoration-none text-light">cafung™ | kelompok 1</a>. All Rights Reserved.</span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="./api.js"></script>
+</body>
+</html>

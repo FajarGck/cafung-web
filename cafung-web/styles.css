@@ -87,7 +87,7 @@ background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%
 .about-text-box {
     height: fit-content;
      background: rgb(112,0,112);
-background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%);
+    background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%);
     -webkit-box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
     -moz-box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
     box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
@@ -97,19 +97,38 @@ background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%
     color: white;
 }
 
-.btn-beli {
+.btn-card {
   background-color: #700070;
   border: none;
   transition: all 0.3s ease;
 }
 
-.btn-beli:hover {
+.btn-card:hover {
   background-color: #4A1B9D;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #hero-box {
   max-width: 38rem;
+}
+
+.card-quotes {
+    max-width:  50rem;
+    max-height: 25rem;
+    background: rgb(112,0,112);
+    background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%);
+    -webkit-box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+    -moz-box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+    box-shadow: 0px 18px 5px 0px rgba(140,140,140,1);
+    transition: all, ease-in-out, 1s;
+}
+
+#quotes-text {
+  field-sizing: 1rem * 1.25;
+}
+
+#quotes-author {
+  font-size: 1rem * 1.75;
 }
 
 #btn-menu {
@@ -153,7 +172,7 @@ background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%
     margin-top: -15px;
 }
 
-.btn-beli{
+.btn-card{
     border-radius: 50px;
     width: 120px;
 }
@@ -166,13 +185,13 @@ background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%
     color: white;
 }
 
-.btn-beli {
+.btn-card {
     background-color: #4A1B9D;
     border: none;;
 
 }
 
-.btn-beli:hover{
+.btn-card:hover{
     background-color: #5a005a;
 }
 
@@ -185,7 +204,13 @@ background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%
 }
 
 @media (min-width: 768px) {
-  
+  #quotes-text {
+    font-size: 1.75rem;
+  }
+
+  #quotes-author {
+    font-size: 2.25rem;
+  }
 }
 
 @media (min-width: 992px) {

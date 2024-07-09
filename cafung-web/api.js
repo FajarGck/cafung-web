@@ -27,8 +27,7 @@ async function fetchData() {
             let productsData = products;
             let storesData = stores
             document.getElementById('allMenu').addEventListener('click', (e) => {
-            e.preventDefault()
-            showAllProducts(productsData);
+            e.preventDefault();
                 });
 
                 document.getElementById('menuMakanan').addEventListener('click', (e) => {

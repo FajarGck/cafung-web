@@ -7,6 +7,7 @@ const getAllStores = async (req, res) => {
             id: item.id,
             name: item.name,
             owner: item.owner,
+            kontak: item.kontak,
             image_path: item.image_path
         }))
         res.status(200).json({
@@ -46,6 +47,7 @@ const getStoresWithProducts = async (req, res) => {
                 name: item.product_name,
                 description: item.description,
                 price: item.price,
+                kontak: item.kontak,
                 image_path: item.product_image,
                 category: {
                     id: item.category_id,
@@ -69,7 +71,7 @@ const getStoresWithProducts = async (req, res) => {
 
 
 const addStores = async (req, res) => {
-    const { id, name, owner } = req.body;
+    const { id, name, owner, kontak } = req.body;
       const imgPath = req.file ? req.file.path : null;
     try {
         const results = await storesModel.addStores(id, name, owner, imgPath);
@@ -91,7 +93,7 @@ const addStores = async (req, res) => {
 
 const updateStores = async (req, res) => {
     const { id } = req.params;
-    const { name, owner } = req.body;
+    const { name, owner, kontak } = req.body;
       const imgPath = req.file ? req.file.path : null;
     try {
         const results = await storesModel.updateStores(id, name, owner, imgPath);

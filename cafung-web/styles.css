@@ -177,11 +177,7 @@ background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%
     width: 120px;
 }
 
-.card-title,.price-menu{
-    color: white;
-}
-
-.card-text {
+.card-title,.card-text,.price-menu{
     color: white;
 }
 
@@ -195,12 +191,69 @@ background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%
     background-color: #5a005a;
 }
 
+#model-card {
+  height: 100vh;;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9988;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-content {
+  background-color: #5a005a;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90vw;
+  gap: 2rem;
+}
+
+.img-model {
+  height: 13rem;
+  width: auto;
+  transition: transform 0.2s;
+}
+
+.img-model:hover {
+  transform: scale(1.05);
+}
+
+#detail-model {
+  max-width: 20rem;
+  padding: 0 1rem;
+}
+
+.model-title {
+  color: white;
+}
+
+.model-text {
+  color: white;
+}
+
+.price-model {
+  color: white;
+}
+
+.icon-model {
+  margin: 1rem 1rem 0.5rem 0;
+  max-width: 20rem;
+}
+
+.stores {
+  gap: 0.25rem;
+}
+
 #kontak-container {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 #list-kontak {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 @media (min-width: 768px) {
@@ -211,6 +264,28 @@ background: linear-gradient(180deg, rgba(112,0,112,1) 56%, rgba(60,0,121,1) 100%
   #quotes-author {
     font-size: 2.25rem;
   }
+
+  #img-model {
+    height: 16rem;
+    width: auto;
+  }
+
+  #detail-model {
+    padding: 0 0.25rem;
+  }
+
+
+  /* #close-icon {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    align-self: self-start; 
+    color: white; 
+    cursor: pointer;
+    font-size: 1.5rem; 
+    height: fit-content;
+    width: fit-content;
+} */
 }
 
 @media (min-width: 992px) {

@@ -56,7 +56,7 @@ const renderProducts = (products) => {
                     </div>
                     <div class="mb-5 d-flex justify-content-around">
                         <h3 class="price-menu fw-semibold">Rp. ${product.price}</h3>
-                        <button class="btn-card rounded text-light">Pesan</button>
+                        <button class="btn-card rounded text-light">Lihat</button>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@ const getAllStores = async () => {
 };
 
 const getStoresWithProducts = async (storeId) => {
-    const sql = ` SELECT stores.id AS store_id, stores.name AS store_name, stores.owner, stores.kontak, stores.image_path AS store_image,
+    const sql = ` SELECT stores.id AS store_id, stores.name AS store_name, stores.owner, stores.image_path AS store_image, stores.kontak,
                     products.id AS product_id, products.name AS product_name, products.description, products.price, products.image_path AS product_image,
                     categories.id AS category_id, categories.name AS category_name
                     FROM stores
@@ -33,7 +33,7 @@ const getStoresWithProducts = async (storeId) => {
 };
 
 const addStores = async  (id, name, owner, kontak, imgPath) => {
-    const sql = 'INSERT INTO stores (id, name, owner, kontak, image_path) VALUES(?, ?, ?, ?)';
+    const sql = 'INSERT INTO stores (id, name, owner, kontak, image_path) VALUES(?, ?, ?, ?, ?)';
     const values = [id, name, owner, kontak, imgPath];
     return new Promise((resolve, reject) => {
         db.query(sql, values, (err, results) => {

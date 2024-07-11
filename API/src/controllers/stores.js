@@ -41,6 +41,7 @@ const getStoresWithProducts = async (req, res) => {
             id: results[0].store_id,
             name: results[0].store_name,
             owner: results[0].owner,
+            kontak: results[0].kontak,
             image_path: results[0].store_image,
             products: results.map(item => ({
                 id: item.product_id,
@@ -74,7 +75,7 @@ const addStores = async (req, res) => {
     const { id, name, owner, kontak } = req.body;
       const imgPath = req.file ? req.file.path : null;
     try {
-        const results = await storesModel.addStores(id, name, owner, imgPath);
+        const results = await storesModel.addStores(id, name, owner,kontak, imgPath);
         res.status(200).json({
             status: 'ok!',
             data: {

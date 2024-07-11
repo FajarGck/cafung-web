@@ -8,6 +8,8 @@ let productsData = [];
 let drinkData = [];
 let foodData = [];
 
+
+
 async function fetchData() {
     try {
         const baseUrl = `http://localhost:8080`;
@@ -45,7 +47,7 @@ async function fetchData() {
                     showStores(storesData)
                 })
                 showAllProducts(productsData);
-        }
+                }
 
     } catch (error) {
         console.error('error fetching data: ', error)
@@ -53,6 +55,31 @@ async function fetchData() {
 }
 
 
+const dummy = () => {
+    const dummy = document.getElementById('dummy')
+    for (let i = 0; i < 6 ; i++) {
+        dummy.innerHTML += `
+        <div class="col" id="1">
+                        <div class="card">
+                            <img src="./assets/menu-dummy.jpeg" class="card-img-top" alt="card-img">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Tahu Bulat</h5>
+                                <p class="card-text fw-base">Lorem ipsum elit. quidem aliquam nisi dolores!</p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3 class="price-menu fw-semibold">Rp. 10000</h3>
+                                <button class="btn-card rounded text-light">Lihat</button>
+                            </div>
+                        </div>
+                    </div>
+        `
+    }
+}
+
+
+
 fetchData();
+dummy();
+
 
 

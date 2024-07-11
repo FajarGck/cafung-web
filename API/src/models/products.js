@@ -1,7 +1,7 @@
 const db = require('../config/db');
 
 const getAllProducts = async () => {
-    const sql = `SELECT products.id AS product_id, products.name AS product_name, products.description, products.price, products.image_path AS product_image,
+    const sql = `SELECT products.id AS product_id, products.name AS product_name, products.description, products.price, products.rate, products.image_path AS product_image,
                 categories.id AS category_id, categories.name AS category_name,
                 stores.id AS store_id, stores.name AS store_name, stores.owner, stores.image_path AS store_image
                 FROM products
@@ -18,12 +18,12 @@ const getAllProducts = async () => {
         });
     });
 };
-const addProduct = async (name, description, price, imgPath, storeId, categoryId) => {
+const addProduct = async (name, description, price, rate, imgPath, storeId, categoryId) => {
     const sql = `
-        INSERT INTO products (name, description, price, image_path, store_id, category_id)
-        VALUES (?, ?, ?, ?, ?, ?)
+        INSERT INTO products (name, description, price, rate, image_path, store_id, category_id)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
-    const values = [name, description, price, imgPath, storeId, categoryId];
+    const values = [name, description, price, rate, imgPath, storeId, categoryId];
     return new Promise((resolve, reject) => {
         db.query(sql, values, (err, result) => {
             if (err) {
@@ -35,13 +35,13 @@ const addProduct = async (name, description, price, imgPath, storeId, categoryId
     });
 };
 
-const updateProduct = async (id, name, description, price, imgPath, storeId, categoryId) => {
+const updateProduct = async (id, name, description, price, rate, imgPath, storeId, categoryId) => {
     const sql = `
         UPDATE products
-        SET name = ?, description = ?, price = ?, image_path = ?, store_id = ?, category_id = ?
+        SET name = ?, description = ?, price = ?, rate = ?, image_path = ?, store_id = ?, category_id = ?
         WHERE id = ?
     `;
-    const values = [name, description, price, imgPath, storeId, categoryId, id];
+    const values = [name, description, price, rate, imgPath, storeId, categoryId, id];
     return new Promise((resolve, reject) => {
         db.query(sql, values, (err, result) => {
             if (err) {

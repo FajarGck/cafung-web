@@ -7,6 +7,7 @@ const getAllProducts = async (req, res) => {
             id: item.product_id,
             name: item.product_name,
             description: item.description,
+            rate: item.rate,
             price: item.price,
             image_path: item.product_image,
             category: {
@@ -39,10 +40,10 @@ const getAllProducts = async (req, res) => {
 
 
 const addProduct = async (req, res) => {
-    const { name, description, price, storeId, categoryId } = req.body;
+    const { name, description, price, rate, storeId, categoryId } = req.body;
     const imgPath = req.file ? req.file.path : null;
     try {
-        const results = await productsModel.addProduct(name, description, price, imgPath, storeId, categoryId);
+        const results = await productsModel.addProduct(name, description, price, rate, imgPath, storeId, categoryId);
         res.status(201).json({
             status: 'ok!',
             message: 'Product added successfully',
@@ -63,10 +64,10 @@ const addProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
     const { id } = req.params;
-    const { name, description, price, storeId, categoryId } = req.body;
+    const { name, description, price, rate, storeId, categoryId } = req.body;
     const imgPath = req.file ? req.file.path : null;
     try {
-        const results = await productsModel.updateProduct(id, name, description, price, imgPath, storeId, categoryId);
+        const results = await productsModel.updateProduct(id, name, description, price, rate, imgPath, storeId, categoryId);
         if (results.affectedRows === 0) {
             return res.status(404).json({
                 status: 'Not Found!',

@@ -96,7 +96,7 @@ const updateStores = async (req, res) => {
     const { name, owner, kontak } = req.body;
       const imgPath = req.file ? req.file.path : null;
     try {
-        const results = await storesModel.updateStores(id, name, owner, imgPath);
+        const results = await storesModel.updateStores(id, name, owner, kontak, imgPath);
         if (results?.affectedRows) {
             res.status(200).json({
                 status: 'ok!',

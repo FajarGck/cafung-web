@@ -1,11 +1,27 @@
-const cardContainer = document.getElementById('card-container');
+import { fetchStoreWithProduct } from "./api.js";
+let menu = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
+const cardContainer = document.getElementById('shop-container');
+const storesContainer = document.getElementById('stores-container')
+ const modelCard = document.getElementById('model-card');
+const imgModel = document.getElementById('img-model').querySelector('img');
+const detailModel = document.getElementById('detail-model');
 
 
 
+menu.onclick = () => {
+  menu.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+};
+
+window.onscroll = () => {
+  menu.classList.remove("bx-x");
+  navbar.classList.remove("active");
+};
 
 
-const showAllProducts = (productsData) => {
-    const products = productsData.data.products;
+const showPopularProducts = (productsData) => {
+    const products = [productsData.data.products][0].filter(item => item.rate == 5)
     renderProducts(products);
 }
 
@@ -47,46 +63,90 @@ const renderProducts = (products) => {
         }
 
         cardContainer.innerHTML += `
-            <div class="col" id="${product.id}">
-                <div class="card">
-                    <img src="http://localhost:8080/${product.image_path}" class="card-img-top" alt="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">${product.name}</h5>
-                        <p class="card-text fw-base">${description}</p>
-                    </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <h3 class="price-menu fw-semibold">Rp. ${product.price}</h3>
-                        <button class="btn-card rounded text-light">Lihat</button>
-                    </div>
+            <div class="box mb-2 mb-md-5" id="${product.id}">
+                <div class="box-img">
+                    <img src="http://localhost:8080/${product.image_path}" class="card-img" alt="menu-img" />
                 </div>
-            </div>
-        `;
-    });
-}
-const renderStores = (storeData) => {
-    cardContainer.innerHTML = '';
-    storeData.forEach(store => {
-        cardContainer.innerHTML += `
-            <div class="col" id="${store.id}">
-                <div class="card">
-                    <img src="http://localhost:8080/${store.image}" class="card-img-top" alt="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">${store.name}</h5>
-                        <p class="card-text fw-semibold mb-0">Pemilik: ${store.owner}</p>
-                        <p class="card-text fw-semibold mb-0">Kontak: ${store.kontak}</p>
-                        <div class="d-flex ">
-                            <button class="btn-card rounded text-light mb-5 mt-2 p-1">Lihat</button>
-                        </div>
-                    </div>
+                <div class="stars">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
                 </div>
+                <h2 class="text-light">${product.name}</h2>
+                <span class="text-light">Rp. ${product.price}</span>
+                <h5 class="text-light mb-2 fs-6">${description}</h5>
+                <a href="#menu" class="btn">Order now</a>
             </div>
         `;
     });
 }
 
+const showStoreWithProducts = (store) => {
+    imgModel.src = `http://localhost:8080/${store.image_path}`;
+    detailModel.querySelector('.model-title').textContent = store.name;
+    detailModel.querySelector('.model-text').textContent = `Owner: ${store.owner}`;
+    detailModel.querySelector('.model-text + .model-text').textContent = store.kontak;
+
+    const listMenu = detailModel.querySelector('.list-menu');
+    listMenu.innerHTML = ''; // Kosongkan list menu sebelumnya
+
+    store.products.forEach(product => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('list');
+        listItem.textContent = `-${product.name}`;
+        listMenu.appendChild(listItem);
+    });
+
+    modelCard.classList.remove('d-none'); 
+}
+
+const renderStores = (storeData) => {
+    storesContainer.innerHTML = '';
+    storeData.forEach(store => {
+        storesContainer.innerHTML += `
+            <div class="box mb-2 mb-md-5" id="${store.id}">
+                <div class="box-img">
+                    <img src="http://localhost:8080/${store.image}" class="card-img" alt="menu-img" />
+                </div>
+                <div class="stars">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                </div>
+                <h2 class="text-light">${store.name}</h2>
+                <span class="text-light"><span class="fs-5">Owner:</span> ${store.owner}</span>
+                <h5 class="text-light mb-2 fs-6">${store.kontak}</h5>
+                <a href="#store" id="btn-store" class="btn-store text-decoration-none p-2 rounded">See more >></a>
+            </div>
+        `;
+    });
+    const storeCards = document.querySelectorAll('.box');
+    storeCards.forEach(card => {
+        card.addEventListener('click', () => {
+            fetchStoreWithProduct(card.id)
+        });
+    });
+}
+
+const closeModel = () => {
+    const closeBtn = document.getElementById('close-btn');
+    closeBtn.addEventListener('click', () => {
+        modelCard.classList.add('d-none');
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    closeModel();
+});
+
 export {
-    showAllProducts,
+    showPopularProducts,
     showProductsByCategory,
-    showStores
+    showStores,
+    showStoreWithProducts,
+    closeModel
     
 }

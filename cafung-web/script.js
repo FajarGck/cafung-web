@@ -120,7 +120,7 @@ const renderStores = (storeData) => {
                 <h2 class="text-light">${store.name}</h2>
                 <span class="text-light"><span class="fs-5">Owner:</span> ${store.owner}</span>
                 <h5 class="text-light mb-2 fs-6">${store.kontak}</h5>
-                <a href="#store" id="btn-store" class="btn-store text-decoration-none p-2 rounded">See more >></a>
+                <a href="#store" id="btn-store" class="btn-store text-decoration-none p-2 rounded">See Menu >></a>
             </div>
         `;
     });

@@ -1,8 +1,8 @@
 import {
     showPopularProducts,
-    showProductsByCategory,
     showStores,
-    showStoreWithProducts
+    showStoreWithProducts,
+    expandNavbar
 } from './script.js'
 
 let productsData = [];
@@ -15,8 +15,6 @@ async function fetchData() {
         const baseUrl = `http://localhost:8080`;
         const productsResponse = await fetch(`${baseUrl}/products`);
         const categoriesResponse = await fetch(`${baseUrl}/categories`);
-        const productDrink = await fetch(`${baseUrl}/categories/drink/products`);
-        const productFood = await fetch(`${baseUrl}/categories/food/products`);
         const storesResponse = await fetch(`${baseUrl}/stores`);
       
         
@@ -29,6 +27,7 @@ async function fetchData() {
             let storesData = stores
                 showPopularProducts(productsData);
                 showStores(storesData);
+            expandNavbar();
         }
 
     } catch (error) {

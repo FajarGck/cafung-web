@@ -1,329 +1,248 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  class="scroll-smooth"
->
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAFUNG</title>
-    <link
-      rel="icon"
-      type="image"
-      href="./assets/logo.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="styles.css"
-    />
-  </head>
-  <body>
-    <header>
-      <a
-        href="#"
-        class="logo"
-        ><img
-          src="./assets/logo.png"
-          alt=""
-      /></a>
-      <div
-        class="bx bx-menu text-light"
-        id="menu-icon"
-      ></div>
-      <ul class="navbar">
-        <li>
-          <a
-            href="#home"
-            class="text-light text-decoration-none"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a
-            href="#about"
-            class="text-light text-decoration-none"
-            >About</a
-          >
-        </li>
-        <li>
-          <a
-            href="#stores"
-            class="text-light text-decoration-none"
-            >Shop</a
-          >
-        </li>
-        <li>
-          <a
-            href="#contact"
-            class="text-light text-decoration-none"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </header>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "base-color": '#69026c',
+          }
+        }
+      }
+    }
+  </script>
+</head>
 
-    <section
-      class="home w-100" id="home">
-      <div class="home-text">
-        <span>Welcome to</span>
-        <h1>Cafe Ungu</h1>
-        <h2>
-          #Cobaajadulugaksih <br />
-          masa engga
-        </h2>
-        <a
-          href="#menu"
-          class="btn-banner text-decoration-none"
-          >Check Now</a
-        >
+<body>
+  <nav class="fixed top-0 w-full">
+      <div class="wrapper flex flex-col justify-between w-[100%] h-auto bg-base-color border-b font-semibold text-white md:text-lg md:flex-row md:justify-evenly">
+        <div id="nav-btn" class="nav-btn absolute right-2 top-2 p-2 items-center mx-4 flex md:hidden">
+          <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+        </div>
+        <div class="nav-brand flex py-2 items-center ">
+            <a href="#"><img class="w-auto h-10 mb-2 mx-4 mr-1 md:h-14" src="./assets/logo.png" alt="brand-img"></a>
+        </div>
+        <div id="nav-list" class="nav-list border-2 m-2 hidden h-auto bg-base-color md:flex md:border-none md:items-center">
+          <ul class="flex flex-col mb-2 py-2 justify-between text-sm gap-3 md:flex-row lg:text-lg">
+              <li class="px-2 hover:border-b-2 mx-2 w-fit"><a href="#" class="mb-4">HOME</a></li>
+              <li class=" px-2 hover:border-b-2 mx-2 w-fit"><a href="#facility" class="mb-4">ABOUT</a></li>
+              <li class=" px-2 hover:border-b-2 mx-2 w-fit"><a href="#menu" class="mb-4">MENU</a></li>
+              <li class=" px-2 hover:border-b-2 mx-2 w-fit"><a href="#feedback" class="mb-4">CONTACTS</a></li>
+          </ul>
       </div>
-      <div class="home-img">
-        <img
-          src="./assets/logo.png"
-          alt=""
-        />
       </div>
-    </section>
+  </nav>
 
 
-    <section class="fasilitas pt-0 pb-5 my-5" id="fasilitas">
-      <h1>Fasilitas</h1>
-      <div class="fasilitas-container">
-        <div class="fasilitas-box">
-          <div class="fasilitas-img">
-            <img
-              src="./assets/cafung1.jpg"
-              alt=""
-            />
+  <section id="hero" class="hero pt-12 md:pt-16">
+    <div class="container min-h-screen mx-auto min-w-full bg-base-color pt-6">
+      <div class="wrapper h-[90%] flex flex-col justify-center items-start gap-2 mx-[5%] md:gap-5  md:flex-row md:justify-center md:items-center">
+        <div class="hero-text flex flex-col w-sm gap-2">
+          <p class="text-lg lg:text-2xl font-semibold text-white">WELCOME TO </p>
+          <p class="text-4xl lg:text-6xl font-bold text-white">CAFE UNGU</p>
+          <p class="text-2xl lg:text-4xl font-semibold text-white">#COBAAJADULUGAKSIH</p>
+          <div class="hero-btn bg-white text-black w-fit rounded-3xl py-2 px-4 font-semibold hover:bg-[#ffffffc9]">
+            <a href="#menu">Check Now</a>
           </div>
         </div>
-        <div class="fasilitas-box">
-          <div class="fasilitas-img">
-            <img
-              src="./assets/cafung2.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="fasilitas-box">
-          <div class="fasilitas-img">
-            <img
-              src="./assets/cafung3.jpg"
-              alt=""
-            />
-          </div>
-          <h3 class="fasilitas-text fs-6 fw-semibold"></h3>
-        </div>
-        <div class="fasilitas-box">
-          <div class="fasilitas-img">
-            <img
-              src="./assets/cafung4.jpg"
-              alt=""
-            />
-          </div>
+        <div class="hero-img h-full w-full mb-4 flex justify-center items-center">
+          <img class="w-auto h-auto" src="./assets/logo.png" alt="logo">
         </div>
       </div>
-    </section>
-
-    <section id="menu" class="py-5">
-      <div class="w-100 text-center">
-        <span class="fw-bold fs-3">Menu</span>
-      </div>
-      <div class="heading">
-        <span>Popular Menu</span>
-      </div>
-      <div
-        id="shop-container"
-        class="shop-container d-flex justify-content-center flex-wrap mx-5"
-      ></div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="about-img">
-        <img
-          src="./assets/cafe ungu.jpg" style="width: 20rem; height: auto;"
-          class="card-img"
-          alt=""
-        />
-      </div>
-      <div class="about-text">
-        <h2>About Us</h2>
-        <p>
-          Selamat datang di Cafe Ungu, tempat di mana cita rasa dan kenyamanan bertemu. Terletak di jantung kota, Cafe Ungu menawarkan suasana yang hangat dan ramah, sempurna untuk bersantai bersama teman, keluarga, atau bahkan untuk
-          menikmati waktu sendiri. Kami bangga menyajikan berbagai pilihan kopi spesial, teh, dan hidangan lezat yang dibuat dengan bahan-bahan segar dan berkualitas tinggi. Setiap cangkir kopi yang kami sajikan adalah hasil dari dedikasi
-          dan cinta kami terhadap seni meracik kopi.
-        </p>
-        <br />
-      </div>
-    </section>
-
-    <section id="quotes" class="py-5">
-      <div class="card-quotes container-md mb-3">
-        <div class="row g-0">
-          <div class="col-4 d-flex justify-content-center align-items-center">
-            <img
-              src="./assets/wiga.jpeg"
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-8">
-            <div class="card-body d-flex flex-column h-100 justify-content-center align-items-center my-2">
-              <p
-                class="card-text text-center text-light"
-                id="quotes-text"
-              >
-                Caffe disini Sangat Pas ketika lagi mumet mikiri tugas yang gak ngotak, gila kali
-              </p>
-              <h5
-                class="card-title text-center text-light"
-                id="quotes-author"
-              >
-                Wiga Maulana B. | <span>CEO </span>
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="stores" class="py-5">
-      <div class="w-100 text-center">
-        <span class="fw-bold fs-3">Shop</span>
-      </div>
-      <div
-        id="stores-container"
-        class="shop-container d-flex justify-content-center flex-wrap mx-5"
-      ></div>
-    </section>
-
-    <section id="model-card" class="d-none">
-      <div class="model-content p-3 p-md-4 m-3 d-flex flex-column flex-md-row justify-content-center">
-        <h5
-          id="close-btn"
-          class="text-light"
-        >
-          x
-        </h5>
-        <div id="img-model">
-          <img
-            src="./assets/menu-dummy.jpeg"
-            class="img-model mx-auto rounded"
-            alt="card-model"
-          />
-        </div>
-        <div
-          id="detail-model"
-          style="position: relative; height: fit-content; align-self: flex-start"
-        >
-          <h5 class="model-title fw-bold mt-3">Ampu Mart</h5>
-          <p class="model-text fw-base mb-0">Owner: Dono</p>
-          <p class="model-text fw-base mb-2">093928283838</p>
-          <div class="menu-store">
-            <h5 class="title-model fw-semibold text-light">Menu:</h5>
-            <div class="list-menu-container">
-              <ul class="list-menu d-flex flex-wrap text-light"></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact pt-4 pb-0" id="contact">
-      <div class="heading">
-        <h2 class="fw-bold">Contact US</h2>
-      </div>
-      <div class="contact-container">
-        <div class="contact-info">
-          <h2 class="text-light">Kritik & Saran</h2>
-          <p class="text-light">
-            "Kami senang mendengar dari Anda! Jika Anda memiliki pertanyaan, saran, atau ingin melakukan reservasi, jangan ragu untuk menghubungi kami. Tim kami siap membantu Anda. Terima kasih telah memilih Cafe Ungu!"
-          </p>
-          <div class="adress">
-            <i class="bx bxs-map text-light"><span class="text-light">amikom purwokerto</span></i>
-            <i class="bx bxs-phone text-light"><span class="text-light">amikom purwokerto</span></i>
-            <i class="bx bxs-envelope text-light"><span class="text-light">amikom purwokerto</span></i>
-          </div>
-          <div class="social">
-            <a href="#"><i class="bx bxl-facebook text-light"></i></a>
-            <a href="#"><i class="bx bxl-twitter text-light"></i></a>
-            <a href="#"><i class="bx bxl-instagram text-light"></i></a>
-            <a href="#"><i class="bx bxl-youtube text-light"></i></a>
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <form>
-            <label for="name">Nama: </label>
-            <input
-              name="name"
-              id="name"
-              type="text"
-              placeholder="Name"
-            />
-            <label for="email">Email: </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-            />
-            <label for="kritik">Kritik dan Saran: </label>
-            <textarea
-              name="kritik"
-              id="kritik"
-              cols="30"
-              rows="10"
-              placeholder="message"
-            ></textarea>
-            <input
-              type="button"
-              name="btn-submit"
-              id="btn-submit"
-              value="submit"
-              class="btn"
-            />
-          </form>
-        </div>
-      </div>
-    </section>
-    <div class="footer-box bg-dark pb- w-100">
-      <div class="links">
-        <a
-          href="#"
-          class="text-light"
-          >Privacy Policy</a
-        >
-        <a
-          href="#"
-          class="text-light"
-          >Terms Of Use</a
-        >
-        <a
-          href="#"
-          class="text-light"
-          >Our Company</a
-        >
-      </div>
-      <p class="text-light text-center">&#169; Kelompok1 all Right Reserved</p>
     </div>
+  </section>
+    
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./api.js"></script>
-  </body>
+  <section id="menu" class="menu">
+    <div class="container min-h-screen mx-auto min-w-full bg-white pt-6">
+      <h3 class="text-black font-extrabold text-4xl mx-auto text-center w-fit my-4 md:my-8">OUR BEST<br> SELLERS</h3>
+      <div id="menu-container" class="menu-container border-black h-auto flex flex-wrap justify-center items-center gap-3 md:mx-[5%] md:gap-5">
+      
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="facility" class="facility">
+    <div class="container min-h-screen min-w-full bg-white pt-6">
+      <h3 class="text-black font-extrabold text-4xl mx-auto w-fit my-4 md:my-8">FACILITY</h3>
+      <div class="wrapper h-auto grid grid-cols-1 gap-3 content-center mx-[5%] md:grid-cols-2 md:gap-5">
+        <div class="galery-facility grid grid-cols-2 gap-2">
+          <div class="grid gap-1">
+            <img src="./assets/place.jpg" alt="galery-img" class="galery-img mb-2 rounded-lg aspect-square object-cover">
+            <img src="./assets/wc.jpg" alt="galery-img" class="galery-img mb-2 rounded-lg aspect-video object-cover">
+          </div>
+          <div class="grid gap-1">
+            <img src="./assets/wifi.jpg" alt="galery-img" class="galery-img mb-2 rounded-lg aspect-video object-cover">
+            <img src="./assets/sink.jpg" alt="galery-img" class="galery-img mb-2 rounded-lg ">
+          </div>
+        </div>
+        <div class="facility-text h-full w-full bg-white grid grid-cols-1 content-start mx-auto gap-1 max-w-lg md:gap-3">
+          <div class="facility-title">
+            <h3 class="text-xl text-black font-semibold lg:text-4xl">Comfortable Facility😋</h3>
+          </div>
+          <p class="text-sm h-10 max-w-sm text-black lg:text-2xl lg:mb-10">We provide best facility to ensure Comfortable and hygienic for our visitors.</p>
+          <div class="facility-description">
+            <div class="ul list-none grid grid-cols-2 gap-1">
+              <li class="h-full my-2">
+                <h3 class="text-base text-black font-semibold md:text-lg lg:text-xl"><i class="facility-icon  fa-solid fa-leaf bg-base-color text-center w-fit p-2 rounded-full mr-2"></i>Cozy</h3>
+                <p class="text-sm h-fit max-w-sm text-black lg:text-xl">Cozy atmosphere at Café Ungu, place to relax, work, or gather with friends.</p>
+              </li>
+              <li class="h-full my-2">
+                <h3 class="text-base text-black font-semibold md:text-lg lg:text-xl"><i class="facility-icon  fa-solid fa-wifi bg-base-color text-center w-fit p-2 rounded-full mr-2"></i>Wifi</h3>
+                <p class="text-sm h-fit max-w-sm text-black lg:text-xl">Fast and free internet access is available to support your productivity.</p>
+              </li>
+              <li class="h-full my-2">
+                <h3 class="text-base text-black font-semibold md:text-lg lg:text-xl"><i class="facility-icon  fa-solid fa-sink bg-base-color text-center w-fit p-2 rounded-full mr-2"></i>Wastafel</h3>
+                <p class="text-sm h-fit max-w-sm text-black lg:text-xl">Well-maintained and clean sinks to ensure the hygiene and comfort of our visitors.</p>
+              </li>
+              <li class="h-full my-2">
+                <h3 class="text-base text-black font-semibold md:text-lg lg:text-xl"><i class="facility-icon  fa-solid fa-restroom bg-base-color text-center w-fit p-2 rounded-full mr-2"></i>RestRoom</h3>
+                <p class="text-sm h-fit max-w-sm text-black lg:text-xl">We take restroom cleanliness very seriously, that are always clean and hygienic.</p>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <section id="stall" class="stall">
+    <div class="container min-h-screen mx-auto min-w-full bg-white pt-6 mb-10">
+      <div class="container mx-auto min-w-full bg-base-color pt-6">
+      <div class="wrapper h-[90%] flex flex-col justify-center items-start gap-2 mx-[5%] md:gap-5  md:flex-row md:justify-center md:items-center">
+         <div class="hero-img h-full w-full mb-4 flex justify-center items-center">
+          <img class="w-auto h-auto rounded-t-3xl" src="./assets/umkm.jpg" alt="umkm-img">
+        </div>
+        <div class="hero-text flex flex-col w-sm gap-2 mb-4">
+          <p class="text-4xl lg:text-5xl font-bold text-white">Grow With Local UMKM</p>
+          <p class="text-2xl lg:text-3xl font-semibold text-white">Our café proudly supports local micro businesses, offering you fresh, authentic experiences and unique flavors.</p>
+        </div>
+      </div>
+    </div>
+      <h3 id="stall-title" class="text-white py-2 px-4 rounded-3xl text-2xl lg:text-4xl font-extrabold mx-auto text-center w-fit my-4 bg-base-color">OUR PARTNERS <br> STALL</h3>
+      <div id="stall-container" class="stall-container px-2 mx-auto border-black h-auto flex flex-wrap justify-center items-center gap-3 md:mx-[5%] md:gap-5 lg:px-16">
+        
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <section id="feedback" class="Feedback">
+    <div class="container min-h-screen min-w-full bg-base-color pt-6 pb-0 mb-0">
+      <h3 class="text-white font-extrabold text-center text-4xl mx-auto w-fit my-4 max-w-[80%]">Give Us Feedback</h3>
+      <div class="wrapper h-auto bg-base-color rounded-2xl m-4 p-6 pt-2 grid grid-cols-1 gap-3 content-center mx-[5%] md:grid-cols-2 md:gap-5">
+        <div class="feedback-map">
+          <h3 class="text-xl text-white font-semibold mb-2 lg:mb-4 lg:text-4xl"> <i class="fa-solid fa-location-dot fa-lg"></i> Our location</h3>
+          <iframe class="w-full h-auto rounded-lg lg:h-[85%]" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d588.1495639185309!2d109.23129638265347!3d-7.4005454272245625!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655f9e9fe9a9ad%3A0x31ff43666a49235b!2sCAFE%20UNGU!5e0!3m2!1sen!2sid!4v1725177397086!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="feedback-text h-full w-full mb-4 p-4 bg-white border-2 rounded-2xl grid grid-cols-1 content-start mx-auto gap-1 max-w-lg md:gap-3">
+          <form>
+              <div class="grid gap-3 mb-4 md:grid-cols-1">
+                  <div>
+                      <label for="name" class="block mb-2 text-sm font-medium text-gray-900 w-full">Nama</label>
+                      <input type="text" id="name" class="bg-gray-50 border-2 border-black w-full py-2 px-4 text-gray-900 text-sm rounded-lg" placeholder="Santo" required />
+                  </div>
+                  <div>
+                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 w-full">Email</label>
+                      <input type="email" id="email" class="bg-gray-50 border-2 border-black w-full py-2 px-4 text-gray-900 text-sm rounded-lg" placeholder="You@gmail.com" required />
+                  </div>
+                  <div>
+                      <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your message</label>
+                      <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border-2 border-black" placeholder="cafe ungu is really comforrtable UwU😍"></textarea>
+                  </div>  
+              </div>
+              <div class="flex items-start mb-6">
+                  <div class="flex items-center h-5">
+                  <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+                  </div>
+                  <label for="remember" class="ms-2 text-sm font-semibold text-gray-900">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
+              </div>
+              <button type="submit" class="text-white bg-base-color hover:bg-base-color font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+          </form>
+           <div class="contacts">
+            <ul class="flex flex-wrap items-center justify-end mt-3 text-sm font-bold text-gray-500 sm:mt-0">
+              <li>
+                  <a href="#" class="hover:underline me-4 md:me-6"><i class="fa-brands fa-square-x-twitter fa-2xl"></i></a>
+              </li>
+              <li>
+                  <a href="#" class="hover:underline me-4 md:me-6"><i class="fa-brands fa-square-instagram fa-2xl"></i></a>
+              </li>
+              <li>
+                  <a href="#" class="hover:underline me-4 md:me-6"><i class="fa-brands fa-github fa-2xl"></i></a>
+              </li>
+              <li>
+                  <a href="#" class="hover:underline"><i class="fa-solid fa-envelope fa-2xl"></i></a>
+              </li>
+            </ul>
+            <!-- <h3 class="text-xl text-black font-semibold lg:text-4xl">Give Us Feedback</h3> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+<section class="modal">
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[998]">
+    <div class="bg-base-color h-auto text-white p-4 mb-2 rounded-lg w-[80%] flex flex-col md:grid md:grid-cols-2 md:w-[70%] md:max-h-[90vh] relative">
+      <div id="close-btn" class="close-btn absolute top-0 right-0 p-2 cursor-pointer">
+        <button class="text-xlfont-extrabold px-2 rounded-xl hover:bg-red-600"><i class="fa-solid fa-x"></i></button>
+      </div>
+      <div id="modal-img" class="modal-img my-2 px-2 py-2 items-center md:w-full md:h-fit">
+        <img src="./assets/stall.jpeg" alt="Warung Image" class=" h-full w-full max-h-40 self-start mx-auto object-center object-cover rounded-3xl md:max-h-60 md:self-center">
+      </div>
+      <div class="stall-content w-full h-auto my-2 px-2 py-2 flex flex-col">
+        <div id="stall-detail" class="stall-detail flex flex-col gap-1">
+          <h3 class="stall-title text-xl font-semibold text-white lg:text-2xl">Warung Makan PW</h3>
+          <h3 class="stall-owner textxlg font-semibold text-white lg:text-xl"><i class="fa-solid fa-user"></i> Pak Wahyu</h3>
+          <p class="stall-contact text-lg font-semibold text-white lg:text-xl"><i class="fa-brands fa-whatsapp"></i> 0868487276</p>
+          <h3 class="text-xl font-semibold text-white lg:text-2xl">Menu:</h3>
+        </div>
+        <ul class="list-menu max-w-[95%] text-lg font-medium flex flex-wrap space-x-2 lg:max-w-[70%]">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+
+<footer class="bg-gray-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 bottom-0 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://github.com/FajarGck/" class="hover:underline">Kelompok 1</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+      <li>
+          <a href="#" class="hover:underline me-4 md:me-6">About</a>
+      </li>
+      <li>
+          <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+      </li>
+      <li>
+          <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+      </li>
+      <li>
+          <a href="#" class="hover:underline">contact</a>
+      </li>
+    </ul>
+    </div>
+</footer>
+
+
+
+<script type="module" src="./scripts/api.js"></script>
+</body>
 </html>

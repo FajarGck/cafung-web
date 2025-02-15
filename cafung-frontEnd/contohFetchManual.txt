@@ -1,0 +1,28 @@
+console.log(data.data);
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch("http://localhost:5000/products");
+
+                // Jika status tidak 200, lempar error
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const productsResponse = await response.json();
+                const popularProducts = productsResponse.data;
+                setProducts(popularProducts.filter(product => product.price < 11000 && product.rate >= 4));
+            } catch (err) {
+                console.error("Server Error", err);
+                setError(err.message); // Set error message
+            } finally {
+                setLoading(false); // Setelah selesai, set loading ke false
+            }
+        };
+
+        fetchProducts();
+    }, []);

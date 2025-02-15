@@ -11,10 +11,11 @@ const getAllStores = async (req, res) => {
             image_path: item.image_path
         }))
         res.status(200).json({
-            status: 'ok!',
-            data: {
-                stores: stores
-           }
+            status: {
+                code: 200,
+                message: 'OK'
+            },
+            data: stores
         });
     } catch (err) {
         console.error(err);
@@ -57,7 +58,10 @@ const getStoresWithProducts = async (req, res) => {
             }))
         };
         res.status(200).json({
-            status: 'ok!',
+            status: {
+                code: 200,
+                message: 'OK'
+            },
             data: store
         });
     } catch (err) {
@@ -77,7 +81,10 @@ const addStores = async (req, res) => {
     try {
         const results = await storesModel.addStores(id, name, owner,kontak, imgPath);
         res.status(200).json({
-            status: 'ok!',
+            status: {
+                code: 200,
+                message: 'OK'
+            },
             data: {
                 isSuccess: results.affectedRows,
                 insertId: results.insertId
@@ -100,7 +107,10 @@ const updateStores = async (req, res) => {
         const results = await storesModel.updateStores(id, name, owner, kontak, imgPath);
         if (results?.affectedRows) {
             res.status(200).json({
-                status: 'ok!',
+                status: {
+                    code: 200,
+                    message: 'OK'
+                },
                 data: {
                     isSuccess: results.affectedRows,
                     message: results.info
@@ -129,7 +139,10 @@ const deleteStores = async (req, res) => {
         console.log(results)
         if (results?.affectedRows) {
             res.status(200).json({
-                status: 'ok!',
+                status: {
+                    code: 200,
+                    message: 'OK'
+                },
                 data: {
                     isSuccess: results.affectedRows,
                     message: 'Successfully Delete data'

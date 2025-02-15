@@ -23,10 +23,11 @@ const getAllProducts = async (req, res) => {
         }));
 
         res.status(200).json({
-            status: 'ok!',
-            data: {
-                products: products
-            }
+            status: {
+                code: 200,
+                message: 'OK'
+            },
+            data: products
         })
     } catch (err) {
         console.error(err);
@@ -43,9 +44,12 @@ const addProduct = async (req, res) => {
     const { name, description, price, rate, storeId, categoryId } = req.body;
     const imgPath = req.file ? req.file.path : null;
     try {
-        const results = await productsModel.addProduct(name, description, price, rate, imgPath, storeId, categoryId);
-        res.status(201).json({
-            status: 'ok!',
+        const results = await productsModel.addProduct(name, description, price, parseFloat(rate), imgPath, storeId, categoryId);
+        res.status(200).json({
+            status: {
+                code: 200,
+                message: 'OK'
+            },
             message: 'Product added successfully',
             data: {
                 isSuccess: results.affectedRows,
@@ -65,8 +69,18 @@ const addProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
     const { id } = req.params;
     const { name, description, price, rate, storeId, categoryId } = req.body;
-    const imgPath = req.file ? req.file.path : null;
     try {
+
+        const oldResult = await productsModel.getProductsById(id);
+        if (!oldResult) {
+            return res.status(404).json({
+                status: 'Not Found!',
+                message: 'Product not found'
+            });
+        }
+
+        const oldProduct = oldResult[0];
+        const imgPath = req.file ? req.file.path : oldProduct.product_image;
         const results = await productsModel.updateProduct(id, name, description, price, rate, imgPath, storeId, categoryId);
         if (results.affectedRows === 0) {
             return res.status(404).json({
@@ -75,7 +89,10 @@ const updateProduct = async (req, res) => {
             });
         }
         res.status(200).json({
-            status: 'ok!',
+            status: {
+                code: 200,
+                message: 'OK'
+            },
             message: 'Product updated successfully',
             data: {
                 isSuccess: results.affectedRows,
@@ -98,7 +115,10 @@ const deleteProduct = async (req, res) => {
         const results = await productsModel.deleteProduct(id);
         if (results?.affectedRows) {
             res.status(200).json({
-                status: 'ok!',
+                status: {
+                    code: 200,
+                    message: 'OK'
+                },
                 data: {
                     isSuccess: results.affectedRows,
                     message: 'Successfully Delete data'

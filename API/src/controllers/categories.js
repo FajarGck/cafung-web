@@ -8,10 +8,11 @@ const getAllCategories = async (req, res) => {
             name: item.name
         }));
         res.status(200).json({
-            status: 'ok!',
-            data: {
-                categories: categories
-            }
+            status: {
+                code: 200,
+                message: 'OK'
+            },
+            data: categories
         });
     } catch (err) {
         console.error(err);
@@ -27,7 +28,6 @@ const getProductsByCategories = async (req, res) => {
     try {
         const results = await categoriesModel.getProductsByCategories(categoriesName);
 
-        // Check if no results found
         if (results.length === 0) {
             return res.status(404).json({
                 status: 'Not Found',
@@ -35,7 +35,6 @@ const getProductsByCategories = async (req, res) => {
             });
         }
 
-        // Process results
         const productsByCategory = {
             id: results[0].category_id,
             name: results[0].category_name,
@@ -73,7 +72,10 @@ const addCategories = async (req, res) => {
     try {
         const result = await categoriesModel.addCategories(id, name);
         res.status(200).json({
-            status: 'ok!',
+            status: {
+                code: 200,
+                message: 'OK'
+            },
             data: { 
                 isSuccess: result.affectedRows,
                 insertId: result.insertId

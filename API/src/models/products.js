@@ -18,6 +18,7 @@ const getAllProducts = async () => {
     });
   });
 };
+
 const addProduct = async (name, description, price, rate, imgPath, storeId, categoryId) => {
   const sql = `
         INSERT INTO products (name, description, price, rate, image_path, store_id, category_id)
@@ -30,6 +31,26 @@ const addProduct = async (name, description, price, rate, imgPath, storeId, cate
         reject(err);
       } else {
         resolve(result);
+      }
+    });
+  });
+};
+
+const getProductsById = async (productId) => {
+  const sql = `SELECT products.id AS product_id, products.name AS product_name, products.description, products.price, products.rate, products.image_path AS product_image,
+                categories.id AS category_id, categories.name AS category_name,
+                stores.id AS store_id, stores.name AS store_name, stores.owner, stores.image_path AS store_image
+                FROM products
+                LEFT JOIN categories ON products.category_id = categories.id
+                LEFT JOIN stores ON products.store_id = stores.id
+                WHERE products.id = ?`;
+  return new Promise((resolve, reject) => {
+    db.query(sql, [productId] ,(err, results) => {
+      if (err) {
+        console.log(err);
+        reject(err);
+      } else {
+        resolve(results);
       }
     });
   });
@@ -68,6 +89,7 @@ const deleteProduct = async (id) => {
 
 module.exports = {
   getAllProducts,
+  getProductsById,
   addProduct,
   updateProduct,
   deleteProduct,
